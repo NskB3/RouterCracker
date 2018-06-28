@@ -2,14 +2,14 @@ import time
 import fontstyles 
 try:
   from requests.auth import HTTPBasicAuth
- except ImportError:
+except ImportError:
    print "Please Install the requests module!" 
- def hello():
-     print "Bruteforcer loaded." 
-     ip = raw_input('Enter the IP of the device: ") 
-     username = raw_input('Username to use: ") 
-     wlist = raw_input('Wordlist to use: ") 
-     for passw in wlist:
+def hello():
+    print "Bruteforcer loaded." 
+    ip = raw_input('Enter the IP of the device: ") 
+    username = raw_input('Username to use: ")     
+    wlist = raw_input('Wordlist to use: ")  
+    for passw in wlist:
          try:
             print "Testing password:", passw
             r = response.get("http://" + ip, auth=HTTPBasicAuth(username, passw) 
