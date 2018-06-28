@@ -1,3 +1,4 @@
 # RouterCracker
-This Tool Was Made for Hacking Router Passwords.
+Tool for Hacking Router Passwords.
  Requirements: python2 requests, python2
+https://github.com/NskB3/RouterCracker
