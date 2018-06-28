@@ -14,7 +14,8 @@ try:
          |NSK B3|
         RouterCrack
      |--------------|
-    """) def args():
+    """) 
+def args():
        parser = argparse.ArgumentParser() 
        parser.add_argument('-l', '--load', help="Load script") 
        args = parser.parse_args() 
