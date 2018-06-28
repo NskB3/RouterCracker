@@ -6,9 +6,9 @@ import time, os, argparse
 import fontstyles
 try:
   import requests
-except ImportError:
+except:
   print "Install The requests module please."
- def banner():
+def banner():
      print("""
      |______________|
          |NSK B3|
@@ -19,6 +19,6 @@ def args():
        parser = argparse.ArgumentParser() 
        parser.add_argument('-l', '--load', help="Load script") 
        args = parser.parse_args() 
-       os.system('python2",args.load)
+       os.system('python2 ' + args.load)
 banner()
 args() 
