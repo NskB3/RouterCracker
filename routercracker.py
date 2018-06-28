@@ -6,7 +6,7 @@ import time, os, argparse
 import fontstyles
 try:
   import requests
- except ImportError:
+except ImportError:
   print "Install The requests module please."
  def banner():
      print("""
